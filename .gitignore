@@ -1,0 +1,163 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/site/.pnp
+/site/.pnp.js
+pnpm-lock.yaml
+/site/.vscode
+.env
+
+# testing
+/site/coverage
+
+# next.js
+/site/.next/
+/site/out/
+
+# production
+/site/build
+
+# misc
+/site/.DS_Store
+/site/*.pem
+
+# debug
+/site/npm-debug.log*
+/site/yarn-debug.log*
+/site/yarn-error.log*
+
+# local env files
+/site/.env*.local
+/site/.env
+
+# vercel
+/site/.vercel
+
+# typescript
+/site/*.tsbuildinfo
+/site/next-env.d.ts
+
+
+############################
+# STRAPI
+############################
+
+/blog-cms/.env
+/blog-cms/yarn.lock
+
+
+############################
+# Windows
+############################
+
+/blog-cms/Thumbs.db
+/blog-cms/ehthumbs.db
+/blog-cms/Desktop.ini
+/blog-cms/$RECYCLE.BIN/
+/blog-cms/*.cab
+/blog-cms/*.msi
+/blog-cms/*.msm
+/blog-cms/*.msp
+
+
+############################
+# OS X
+############################
+
+/blog-cms/.DS_Store
+/blog-cms/.AppleDouble
+/blog-cms/.LSOverride
+/blog-cms/Icon
+/blog-cms/.Spotlight-V100
+/blog-cms/.Trashes
+/blog-cms/._*
+
+
+############################
+# Linux
+############################
+
+/blog-cms/*~
+
+
+############################
+# Packages
+############################
+
+/blog-cms/*.7z
+/blog-cms/*.csv
+/blog-cms/*.dat
+/blog-cms/*.dmg
+/blog-cms/*.gz
+/blog-cms/*.iso
+/blog-cms/*.jar
+/blog-cms/*.rar
+/blog-cms/*.tar
+/blog-cms/*.zip
+/blog-cms/*.com
+/blog-cms/*.class
+/blog-cms/*.dll
+/blog-cms/*.exe
+/blog-cms/*.o
+/blog-cms/*.seed
+/blog-cms/*.so
+/blog-cms/*.swo
+/blog-cms/*.swp
+/blog-cms/*.swn
+/blog-cms/*.swm
+/blog-cms/*.out
+/blog-cms/*.pid
+
+
+############################
+# Logs and databases
+############################
+
+/blog-cms/.tmp
+/blog-cms/*.log
+/blog-cms/*.sql
+/blog-cms/*.sqlite
+/blog-cms/*.sqlite3
+
+
+############################
+# Misc.
+############################
+
+/blog-cms/*#
+/blog-cms/ssl
+/blog-cms/.idea
+/blog-cms/nbproject
+/blog-cms/public/uploads/*
+/blog-cms/!public/uploads/.gitkeep
+
+############################
+# Node.js
+############################
+
+/blog-cms/lib-cov
+/blog-cms/lcov.info
+/blog-cms/pids
+/blog-cms/logs
+/blog-cms/results
+/blog-cms/node_modules
+/blog-cms/.node_history
+
+############################
+# Tests
+############################
+
+/blog-cms/coverage
+
+############################
+# Strapi
+############################
+
+/blog-cms/.env
+/blog-cms/license.txt
+/blog-cms/exports
+/blog-cms/*.cache
+/blog-cms/dist
+/blog-cms/build
+/blog-cms/.strapi-updater.json
