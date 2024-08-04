@@ -8,13 +8,6 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/src/components/ui/hover-card'
-
-// import { Tooltip } from "@nextui-org/react";
 import logo from '@/public/Footer_logo.svg'
 import blackLogo from '@/public/black_DIX31.png'
 import whitelogo from '@/public/white_DIX31.png'
@@ -124,30 +117,21 @@ export function Footer() {
             </Link>
           </aside>
           <aside className="flex w-full md:w-1/2 items-center justify-center md:ml-auto text-sm tracking-widest space-x-8">
-            <HoverCard>
-              <HoverCardTrigger>
-                <Link
-                  href="https://www.linkedin.com/in/xavier%F0%9F%92%BB-genolhac-79a98390/"
-                  target="_blank"
-                  className="text-gray-500 dark:text-gray-200 dark:hover:text-blue-500"
-                >
-                  <FaLinkedin size={24} />
-                </Link>
-              </HoverCardTrigger>
-              <HoverCardContent side="top">Linkedin</HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <Link
-                  href="https://github.com/koala819/"
-                  target="_blank"
-                  className="ml-3 text-gray-500 dark:text-gray-200 dark:hover:text-yellow-500"
-                >
-                  <FaGithub size={24} />
-                </Link>
-              </HoverCardTrigger>
-              <HoverCardContent side="top">Github</HoverCardContent>
-            </HoverCard>
+            <Link
+              href="https://www.linkedin.com/in/xavier%F0%9F%92%BB-genolhac-79a98390/"
+              target="_blank"
+              className="text-gray-500 dark:text-gray-200 dark:hover:text-blue-500"
+            >
+              <FaLinkedin size={24} />
+            </Link>
+
+            <Link
+              href="https://github.com/koala819/"
+              target="_blank"
+              className="ml-3 text-gray-500 dark:text-gray-200 dark:hover:text-yellow-500"
+            >
+              <FaGithub size={24} />
+            </Link>
           </aside>
         </div>
       </legend>
