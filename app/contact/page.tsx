@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
-import { Button } from '@/src/components/ui/button'
-import { Input } from '@/src/components/ui/input'
-import { Textarea } from '@/src/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -177,11 +177,11 @@ export default function Page() {
                 )}
               </div>
 
-              <div className="flex justify-center items-center">
-                <Button color="primary" type="submit">
-                  Envoyer
-                </Button>
-              </div>
+              {/* <div className="flex justify-center items-center"> */}
+              <Button type="submit" variant="secondary">
+                Envoyer
+              </Button>
+              {/* </div> */}
 
               <p className="text-xs text-gray-500 dark:text-gray-300 mt-3">
                 Mon engagement : vous apporter une réponse en moins de 24h.

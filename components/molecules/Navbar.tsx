@@ -5,7 +5,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ThemeSwitcher } from '@/src/components/atoms/ThemeSwitcher'
+import { ThemeSwitcher } from '@/components/atoms/ThemeSwitcher'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/src/components/ui/navigation-menu'
+} from '@/components/ui/navigation-menu'
 
 export function Navbar() {
   return (
@@ -33,7 +33,7 @@ export function Navbar() {
                 <NavigationMenuTrigger className="px-3 py-2">
                   Item 2
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="bg-white">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                     <li>
                       <NavigationMenuLink asChild>

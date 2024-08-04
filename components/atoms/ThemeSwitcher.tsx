@@ -5,13 +5,13 @@ import * as React from 'react'
 
 import { useTheme } from 'next-themes'
 
-import { Button } from '@/src/components/ui/button'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/src/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu'
 
 export function ThemeSwitcher() {
   const { setTheme } = useTheme()
@@ -28,22 +28,22 @@ export function ThemeSwitcher() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="z-[60]">
+      <DropdownMenuContent align="end" className="z-[60] bg-white">
         <DropdownMenuItem
           onClick={() => setTheme('light')}
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-gray-100 transition-colors"
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('dark')}
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-gray-100 transition-colors"
         >
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('system')}
-          className="cursor-pointer"
+          className="cursor-pointer hover:bg-gray-100 transition-colors"
         >
           System
         </DropdownMenuItem>

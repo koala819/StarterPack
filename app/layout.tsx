@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
-import { Footer } from '@/src/components/molecules/Footer'
-import { Navbar } from '@/src/components/molecules/Navbar'
-import GoogleAnalytics from '@/src/components/util/GoogleAnalytics'
+import { Footer } from '@/components/molecules/Footer'
+import { Navbar } from '@/components/molecules/Navbar'
+import GoogleAnalytics from '@/components/util/GoogleAnalytics'
 
 import { Providers } from './providers'
 
-import { cn } from '@/src/lib/utils'
-import '@/src/styles/globals.css'
+import { cn } from '@/lib/utils'
+import '@/styles/globals.css'
 
 const fontSans = FontSans({
   subsets: ['latin'],
