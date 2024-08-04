@@ -1,33 +1,45 @@
-import "@/src/styles/globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Top } from "@/src/components/templates/Top";
-import { Footer } from "@/src/components/templates/Footer";
-import { Providers } from "./providers";
-import GoogleAnalytics from "@/src/components/util/GoogleAnalytics";
+import type { Metadata } from 'next'
+import { Inter as FontSans } from 'next/font/google'
 
-const inter = Inter({ subsets: ["latin"] });
+import { Footer } from '@/src/components/molecules/Footer'
+import { Navbar } from '@/src/components/molecules/Navbar'
+import GoogleAnalytics from '@/src/components/util/GoogleAnalytics'
+
+import { Providers } from './providers'
+
+import { cn } from '@/src/lib/utils'
+import '@/src/styles/globals.css'
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
-  title: "DIX31",
-  description: "Developpeur Independant Xavier",
-};
+  title: 'DIX31',
+  description: 'Developpeur Independant Xavier',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang='fr'>
-      <body className={`${inter.className}`}>
+    <html lang="fr">
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
         <Providers>
-          <div className='min-h-screen min-w-screen'>
-            <div className=' flex flex-col h-screen'>
-              <Top />
-              <main className='flex-1'>
-                <div className='w-full lg:w-8/12 px-4 mx-auto mt-6'>
-                  <div className='flex flex-col min-w-0 break-words w-full mb-6rounded-lg bg-gray-50 dark:bg-slate-800 border-0'>
+          <div className="min-h-screen min-w-screen">
+            <div className=" flex flex-col h-screen">
+              <Navbar />
+              <main className="flex-1">
+                <div className="w-full lg:w-8/12 px-4 mx-auto mt-6">
+                  <div className="flex flex-col min-w-0 break-words w-full mb-6rounded-lg bg-gray-50 dark:bg-slate-800 border-0">
                     <GoogleAnalytics />
                     {children}
                   </div>
@@ -39,5 +51,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  );
+  )
 }

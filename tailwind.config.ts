@@ -1,9 +1,26 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+import type { Config } from 'tailwindcss'
+
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
+const config = {
+  darkMode: ['class'],
+  content: ['./src/**/*.{ts,tsx}'],
+  prefix: '',
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+      },
+    },
   },
-  darkMode: 'class',
-  plugins: [],
-}
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config
+
+export default config
