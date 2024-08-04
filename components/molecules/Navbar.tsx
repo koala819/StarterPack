@@ -1,11 +1,14 @@
 'use client'
 
+import { Menu } from 'lucide-react'
 import * as React from 'react'
+import { useState } from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { ThemeSwitcher } from '@/components/atoms/ThemeSwitcher'
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,13 +17,40 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function Navbar() {
+  const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false)
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('header')
+      if (window.scrollY > 50) {
+        navbar?.classList.add('scrolled')
+      } else {
+        navbar?.classList.remove('scrolled')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const closeSheet = () => setIsSheetOpen(false)
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <NavigationMenu>
+          <Link href="/" className="flex items-center">
+            {/* Add your logo or site name here */}
+            <span className="text-xl font-bold">Your Logo</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/item1" legacyBehavior passHref>
@@ -37,7 +67,7 @@ export function Navbar() {
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/picture1"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
@@ -54,12 +84,12 @@ export function Navbar() {
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                             Link 1 description
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/picture2"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
@@ -76,7 +106,7 @@ export function Navbar() {
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
                             Link 2 description
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -98,7 +128,52 @@ export function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <ThemeSwitcher />
+
+          {/* Mobile Navigation */}
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button className="md:hidden" size="icon" variant="outline">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-white">
+              <nav className="flex flex-col space-y-4">
+                <Link
+                  className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  href="/item1"
+                  onClick={closeSheet}
+                >
+                  Item 1
+                </Link>
+                <Link
+                  className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  href="/item2"
+                  onClick={closeSheet}
+                >
+                  Item 2
+                </Link>
+                <Link
+                  className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  href="/item3"
+                  onClick={closeSheet}
+                >
+                  Item 3
+                </Link>
+                <Link
+                  className="flex items-center gap-2 rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  href="/contact"
+                  onClick={closeSheet}
+                >
+                  Contact
+                </Link>
+                <ThemeSwitcher />
+              </nav>
+            </SheetContent>
+          </Sheet>
+          <div className="hidden md:flex">
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </div>
