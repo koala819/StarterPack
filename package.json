@@ -1,9 +1,9 @@
 {
-  "name": "nextjs-setup",
+  "name": "starterpack",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clean": "pnpm store prune && rm -rf .next node_modules pnpm-lock.yaml ",
+    "clean": "pnpm store prune && rm -rf .next node_modules pnpm-lock.yaml",
     "dev": "next dev",
     "build": "next build && rm -rf ./.next/_jampack && jampack ./.next",
     "start": "next start",

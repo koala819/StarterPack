@@ -11,7 +11,13 @@ const nextConfig = {
     MAIL_SERVER: process.env.MAIL_SERVER,
   },
   images: {
-    domains: ['images.unsplash.com'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    loader: 'default',
+    path: '/_next/image',
+    remotePatterns: [
+      { hostname: 'images.unsplash.com' },
+    ],
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   reactStrictMode: true,
