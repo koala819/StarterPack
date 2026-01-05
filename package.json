@@ -43,7 +43,6 @@
   "devDependencies": {
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
-    "@tailwindcss/postcss": "4.0.14",
     "@types/node": "latest",
     "@types/nodemailer": "6.4.17",
     "@types/react": "latest",
@@ -61,7 +60,7 @@
     "husky": "9.1.6",
     "postcss": "latest",
     "prettier": "3.5.3",
-    "tailwindcss": "latest",
+    "tailwindcss": "^3.4.1",
     "typescript": "latest"
   },
   "pnpm": {
