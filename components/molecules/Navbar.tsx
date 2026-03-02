@@ -53,11 +53,11 @@ export function Navbar() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/item1" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-3 py-2">
+                <NavigationMenuLink asChild>
+                  <Link href="/item1" className="px-3 py-2">
                     Item 1
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="px-3 py-2">
@@ -113,18 +113,18 @@ export function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/item3" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-3 py-2">
+                <NavigationMenuLink asChild>
+                  <Link href="/item3" className="px-3 py-2">
                     Item 3
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className="px-3 py-2">
+                <NavigationMenuLink asChild>
+                  <Link href="/contact" className="px-3 py-2">
                     Contact
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
